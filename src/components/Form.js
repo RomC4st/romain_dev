@@ -29,7 +29,7 @@ class Form extends Component {
   handleSubmit = (e) => {
     const { name, message, email } = this.state
     e.preventDefault();
-    const url = "/email_contact"
+    const url = "https://server-site-dev-web.herokuapp.com/email_contact"
     const body = {
       name: name,
       message: message,
