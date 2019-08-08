@@ -4,6 +4,7 @@ import '../../node_modules/mapbox-gl/dist/mapbox-gl.css';
 import '../css/App.css'
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiY3IwbjBzIiwiYSI6ImNqdHB1cTQ2azA3cmw0M2swdGtiY3Noa3MifQ.EM0c8d_0JEcc3FOLQ8P0CA';
+
 class Map extends Component {
 
     state = {
@@ -23,14 +24,15 @@ class Map extends Component {
       zoom
     });
     map.on("load", (e) => {
-     
       const marker = new mapboxgl.Marker({
         draggable: true,
         color: '#000'
       })
         .setLngLat(map.getCenter())
-        .addTo(map)
+        .addTo(map) 
+        return marker
     })
+    
   }
 
   render() {

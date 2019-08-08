@@ -7,7 +7,6 @@ const Contact = () => {
   return (
     <div className='Contact'>
       <Grid container>
-
         <Grid item sm={12} md={6} className="top-left">
           <Form />
         </Grid>
