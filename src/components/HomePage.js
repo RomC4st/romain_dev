@@ -2,7 +2,7 @@ import React from 'react'
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Grid from "@material-ui/core/Grid";
-
+import site_in_progress from '../images/klg6ayh7q1xvbgn.jpg'
 
 export default function HomePage() {
 
@@ -12,7 +12,8 @@ export default function HomePage() {
     <Grid container>
 
       <div className="Home_page">
-        <div className='link'>
+      <img src={site_in_progress}/>
+        {/* <div className='link'>
           <Grid item md={12}>
             <div>
               <a target='_blank' rel="noopener noreferrer" href='https://github.com/RomC4st'>
@@ -48,7 +49,7 @@ export default function HomePage() {
               src="https://test19.libizi.fr">
             </iframe>
           </Grid>
-        </div>
+        </div> */}
       </div>
     </Grid>
   )

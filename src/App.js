@@ -14,25 +14,24 @@ class App extends Component {
       <div className="App">
         <Header />
 
-        <div>
-          <nav>
-            <div className='home_link'>
-              <NavLink className="Home" exact to="/">
-                Accueil
+        <nav>
+          <div className='home_link'>
+            <NavLink className="Home" exact to="/">
+              Accueil
                 </NavLink>
-            </div>
-            <div className='contact_link'>
-              <NavLink className="Home" exact to="/contact">
-                Contact
+          </div>
+          <div className='contact_link'>
+            <NavLink className="Home" exact to="/contact">
+              Contact
                 </NavLink>
-            </div>
-          </nav>
-          <Switch>
-            <Route exact path="/" component={HomePage} />
-            <Route path="/contact" component={Contact} />
-          </Switch>
+          </div>
+        </nav>
+        <Switch>
+          <Route exact path="/" component={HomePage} />
+          <Route path="/contact" component={Contact} />
+        </Switch>
 
-        </div>
+
         <Footer />
       </div>
 
