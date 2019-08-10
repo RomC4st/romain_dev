@@ -4,6 +4,7 @@ import Grid from "@material-ui/core/Grid";
 import Button from '@material-ui/core/Button';
 import axios from 'axios';
 import { withStyles } from "@material-ui/core/styles";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const styles = theme => ({
   TextField: {
@@ -27,8 +28,11 @@ class Form extends Component {
     this.setState({ [e.target.name]: e.target.value });
   };
   handleSubmit = (e) => {
+    const recaptchaRef = React.createRef();
     const { name, message, email } = this.state
     e.preventDefault();
+    const recaptchaValue = recaptchaRef.current.getValue();
+    this.props.handleSubmit(recaptchaValue);
     const url = "https://server-site-dev-web.herokuapp.com/email_contact"
     const body = {
       name: name,
@@ -60,7 +64,7 @@ class Form extends Component {
 
         <form onSubmit={this.handleSubmit}>
           <Grid container>
-            <Grid item sm={12}  className="form_name">
+            <Grid item sm={12} className="form_name">
               <TextField
                 className={classes.TextField}
                 required
@@ -96,6 +100,14 @@ class Form extends Component {
                 value={this.state.message}
               />
             </Grid>
+            <Grid item md={12} className='captcha'style={{paddingLeft:'30%'}}>
+              <ReCAPTCHA
+                ref={this.recaptchaRef}
+                sitekey="6LchW7IUAAAAAB9VyOU8Hoc3HfwJYv-VbsB8vhIK"
+                onChange={this.handleChange}
+               
+              />
+              </Grid>
             <Grid item md={12} className="form_button">
               <Button className={classes.Button} type="submit">Envoyer</Button>
             </Grid>
