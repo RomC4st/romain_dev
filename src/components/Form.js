@@ -18,55 +18,56 @@ const styles = theme => ({
 
 
 class Form extends Component {
-  
+
   state = {
     name: ``,
     message: ``,
     email: ``,
     send: false,
-    value_captcha:null
+    value_captcha: null
   }
 
 
   handleChange = e => {
     this.setState({ [e.target.name]: e.target.value })
   };
-   onChange=(value)=> {
+  onChange = (value) => {
     console.log("Captcha value:", value);
     this.setState({
-      value_captcha:value
+      value_captcha: value
     })
   }
   handleSubmit = (e) => {
-    
-    const { name, message, email,value_captcha } = this.state
+
+    const { name, message, email, value_captcha } = this.state
     e.preventDefault();
-  
-    if(value_captcha!==null){
+
+    if (value_captcha !== null) {
       const url = "https://server-site-dev-web.herokuapp.com/email_contact"
-    const body = {
-      name: name,
-      message: message,
-      email: email
-    };
-    axios
-      .post(url, body)
-      .then(res => {
-        if (res.status === 200) {
-          return alert(`Email envoyé ${name} !`)
-        };
-      }, this.setState({
-        name: '',
-        message: '',
-        email: ''
-      }))
-      .catch(err => {
-        return alert(err);
-      });
-    }else{
+      const body = {
+        name: name,
+        message: message,
+        email: email,
+        value: value_captcha
+      };
+      axios
+        .post(url, body)
+        .then(res => {
+          if (res.status === 200) {
+            return alert(`Email envoyé ${name} !`)
+          };
+        }, this.setState({
+          name: '',
+          message: '',
+          email: ''
+        }))
+        .catch(err => {
+          return alert(err);
+        });
+    } else {
       alert('Captcha incorrecte')
     }
-    
+
 
   };
   render() {
@@ -114,14 +115,14 @@ class Form extends Component {
                 value={this.state.message}
               />
             </Grid>
-            <Grid item md={12} className='captcha'style={{paddingLeft:'30%'}}>
+            <Grid item md={12} className='captcha' style={{ paddingLeft: '30%' }}>
               <ReCAPTCHA
                 ref={this.recaptchaRef}
                 sitekey="6LchW7IUAAAAAB9VyOU8Hoc3HfwJYv-VbsB8vhIK"
-               onChange={this.onChange}
-               
+                onChange={this.onChange}
+
               />
-              </Grid>
+            </Grid>
             <Grid item md={12} className="form_button">
               <Button className={classes.Button} type="submit">Envoyer</Button>
             </Grid>
