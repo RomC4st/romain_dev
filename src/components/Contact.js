@@ -3,6 +3,7 @@ import Map from '../components/Map';
 import Form from '../components/Form';
 import Grid from "@material-ui/core/Grid";
 
+
 const Contact = () => {
   return (
     <div className='Contact'>

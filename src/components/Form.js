@@ -16,24 +16,34 @@ const styles = theme => ({
   }
 });
 
+
 class Form extends Component {
+  
   state = {
     name: ``,
     message: ``,
     email: ``,
-    send: false
+    send: false,
+    value_captcha:null
   }
 
+
   handleChange = e => {
-    this.setState({ [e.target.name]: e.target.value });
+    this.setState({ [e.target.name]: e.target.value })
   };
+   onChange=(value)=> {
+    console.log("Captcha value:", value);
+    this.setState({
+      value_captcha:value
+    })
+  }
   handleSubmit = (e) => {
-    const recaptchaRef = React.createRef();
-    const { name, message, email } = this.state
+    
+    const { name, message, email,value_captcha } = this.state
     e.preventDefault();
-    const recaptchaValue = recaptchaRef.current.getValue();
-    this.props.handleSubmit(recaptchaValue);
-    const url = "https://server-site-dev-web.herokuapp.com/email_contact"
+  
+    if(value_captcha!==null){
+      const url = "https://server-site-dev-web.herokuapp.com/email_contact"
     const body = {
       name: name,
       message: message,
@@ -53,6 +63,10 @@ class Form extends Component {
       .catch(err => {
         return alert(err);
       });
+    }else{
+      alert('Captcha incorrecte')
+    }
+    
 
   };
   render() {
@@ -103,8 +117,8 @@ class Form extends Component {
             <Grid item md={12} className='captcha'style={{paddingLeft:'30%'}}>
               <ReCAPTCHA
                 ref={this.recaptchaRef}
-                sitekey="6LchW7IUAAAAAB9VyOU8Hoc3HfwJYv-VbsB8vhIK"
-                onChange={this.handleChange}
+                sitekey="6LemXbIUAAAAABMwefPOd2dY4Xo4fFV2wD-7S6FW"
+               onChange={this.onChange}
                
               />
               </Grid>
