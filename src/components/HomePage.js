@@ -12,7 +12,7 @@ export default function HomePage() {
     <Grid container>
 
       <div className="Home_page">
-      <img src={site_in_progress}/>
+      <img src={site_in_progress} alt='site_in_progress'/>
         {/* <div className='link'>
           <Grid item md={12}>
             <div>
