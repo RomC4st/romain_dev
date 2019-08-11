@@ -2,10 +2,10 @@ import React, { Component } from 'react'
 import mapboxgl from 'mapbox-gl';
 import '../../node_modules/mapbox-gl/dist/mapbox-gl.css';
 import '../css/App.css'
-import API_KEY from '../config/API_KEY'
+import { MAPBOX_API_KEY } from '../config/config'
 
 
-mapboxgl.accessToken = `${API_KEY}`;
+mapboxgl.accessToken = `${MAPBOX_API_KEY}`;
 
 class Map extends Component {
 
@@ -14,7 +14,6 @@ class Map extends Component {
     lat: 48.8211,
     zoom: 13
   };
-
 
   componentDidMount() {
     const { lng, lat, zoom } = this.state;
@@ -34,7 +33,6 @@ class Map extends Component {
         .addTo(map)
       return marker
     })
-
   }
 
   render() {

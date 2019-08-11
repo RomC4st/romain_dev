@@ -5,7 +5,7 @@ import Button from '@material-ui/core/Button';
 import axios from 'axios';
 import { withStyles } from "@material-ui/core/styles";
 import ReCAPTCHA from "react-google-recaptcha";
-import SITE_KEY from '../config/SITE_KEY'
+import { RECAPTCHA_SITE_KEY } from '../config/config'
 
 const styles = () => ({
   TextField: {
@@ -118,7 +118,7 @@ class Form extends Component {
             <Grid item md={12} className='captcha' style={{ paddingLeft: '30%' }}>
               <ReCAPTCHA
                 ref={this.recaptchaRef}
-                sitekey={SITE_KEY}
+                sitekey={RECAPTCHA_SITE_KEY}
                 onChange={this.onChange}
               />
             </Grid>
