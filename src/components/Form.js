@@ -5,7 +5,7 @@ import Button from '@material-ui/core/Button';
 import axios from 'axios';
 import { withStyles } from "@material-ui/core/styles";
 import ReCAPTCHA from "react-google-recaptcha";
-import { RECAPTCHA_SITE_KEY } from '../config/config'
+import { RECAPTCHA_SITE_KEY, SERVER_URL } from '../config/config'
 
 const styles = () => ({
   TextField: {
@@ -43,7 +43,7 @@ class Form extends Component {
     e.preventDefault();
 
     if (value_captcha !== null) {
-      const url = "https://server-site-dev-web.herokuapp.com/email_contact"
+      const url = SERVER_URL
       const body = {
         name: name,
         message: message,
