@@ -13,7 +13,7 @@ export default function HomePage() {
 
       <div className="Home_page">
       <img src={site_in_progress} alt='site_in_progress'/>
-       <div className='link'>
+       {/* <div className='link'> 
           <Grid item md={12}>
             <div>
               <a target='_blank' rel="noopener noreferrer" href='https://github.com/RomC4st'>
@@ -49,7 +49,7 @@ export default function HomePage() {
               src="https://libizi.fr">
             </iframe>
           </Grid>
-        </div> 
+        </div> */}
       </div>
     </Grid>
   )
