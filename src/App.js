@@ -5,12 +5,11 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Contact from './components/Contact'
 import './css/App.css';
-require('dotenv').config()
+
 
 class App extends Component {
   render() {
     return (
-
       <div className="App">
         <Header />
 
@@ -18,19 +17,19 @@ class App extends Component {
           <div className='home_link'>
             <NavLink className="Home" exact to="/">
               Accueil
-                </NavLink>
+            </NavLink>
           </div>
           <div className='contact_link'>
             <NavLink className="Home" exact to="/contact">
               Contact
-                </NavLink>
+            </NavLink>
           </div>
         </nav>
+
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route path="/contact" component={Contact} />
         </Switch>
-
 
         <Footer />
       </div>
