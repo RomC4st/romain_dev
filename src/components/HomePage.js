@@ -2,7 +2,7 @@ import React from 'react'
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Grid from "@material-ui/core/Grid";
-import site_in_progress from '../images/klg6ayh7q1xvbgn.jpg'
+// import site_in_progress from '../images/klg6ayh7q1xvbgn.jpg'
 
 export default function HomePage() {
 
