@@ -79,10 +79,14 @@ height:100%!important
 
 }
 .Home_page{
- 
   width:90vw;
-
 }
+iframe{
+  width:25.6vw;
+  height:34.5vw;
+  
+}
+
 .Contact{
   height:80vh;
   width:90vw;

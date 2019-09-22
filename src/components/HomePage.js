@@ -10,10 +10,9 @@ export default function HomePage() {
 
   return (
     <Grid container>
-
       <div className="Home_page">
-      <img src={site_in_progress} alt='site_in_progress'/>
-       {/* <div className='link'> 
+        {/* <img src={site_in_progress} alt='site_in_progress' /> */}
+        <div className='link'>
           <Grid item md={12}>
             <div>
               <a target='_blank' rel="noopener noreferrer" href='https://github.com/RomC4st'>
@@ -25,6 +24,15 @@ export default function HomePage() {
             </div>
           </Grid>
           <Grid item sm={12}  >
+            <iframe
+              title="JeuxPhaser"
+              width="480px"
+              height="640px"
+              src='https://starshoot.000webhostapp.com/'
+              scrolling="no"           >
+            </iframe>
+          </Grid>
+          {/*  <Grid item sm={12}  >
             <iframe
               title="BlogPhoto"
               width="30%"
@@ -48,8 +56,8 @@ export default function HomePage() {
               height="600px"
               src="https://libizi.fr">
             </iframe>
-          </Grid>
-        </div> */}
+          </Grid> */}
+        </div>
       </div>
     </Grid>
   )
