@@ -149,7 +149,8 @@ background-color:#fff
   z-index:1;
   background-color: #282c34;
   color:#fff;
-  padding:2vh 1px 1px 1px
+  padding:2vh 1px 1px 1px;
+  cursor:pointer
 }
 #site_in_progess{
   display:none
