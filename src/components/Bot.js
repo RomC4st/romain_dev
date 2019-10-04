@@ -11,7 +11,12 @@ const styles = () => ({
     height: '40vh',
     borderTopLeftRadius: '50px',
     borderTopRightRadius: '50px',
-    backgroundColor: 'rgba(119,136,153,0.1)',
+    backgroundColor: 'rgba(119,136,153,0.2)',
+  },
+  Padding:{
+    padding:'8px',
+    backgroundColor: '#fff',
+    borderRadius:'20px'
   },
   Hidden: {
     display: 'none'
@@ -48,16 +53,8 @@ class Bot extends Component {
 
     axios.post(url, body)
       .then(res => {
-
         const r = res.data.split('<Message>');
-        console.log(r);
         const response = r[1].split('</Message>');
-        const link = ()=>{
-           if(response[0].includes('http')){
-            console.log(1);
-          }
-        }
-        link()
         this.setState({ response: response[0] })
       })
 
@@ -67,16 +64,15 @@ class Bot extends Component {
     const { click, response, req } = this.state
     return (
       <div className='bot'>
-        <h5 onClick={this.handleClick} className={click === false ? classes.Bottom : classes.Top}>Hello From Bot</h5>
+        <h5 onClick={this.handleClick} className={click === false ? classes.Bottom : classes.Top}>GoogleBot</h5>
         <div className={click === false ? classes.Hidden : classes.Visible}>
           <Grid container >
             <Grid item md={12} >
               <p className='text'>{response}</p>
-              <p className='text'>{req}</p>
-
+              <p className='text'><span className={req===''?0:classes.Padding}>{req}</span></p>
               <Input
                 name='message'
-                placeholder='Tapez votre texte ici'
+                placeholder='  Tapez votre texte ici'
                 id="standard-input"
                 onChange={this.handleChange}
                 value={this.state.body}
