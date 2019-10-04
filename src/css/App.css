@@ -114,12 +114,12 @@ padding:2px
 input#standard-input{
 position:absolute;
 bottom:-32vh;
-right:-20vw;
-width:19.95vw;
+right:-15vw;
+width:14.90vw;
 background-color:#fff;
 border-top: 1px solid #000;
 border-bottom: 1px solid #000;
-border-left: 1px solid #000;
+
 
 }
 .button_chatBot{
@@ -132,7 +132,7 @@ background-color:#fff
 .bot{
   position:absolute;
   top:-40vh;
-  right:0;
+  right:1vw;
   width:15vw;
   height:50vh;
   margin-bottom:20vh !important

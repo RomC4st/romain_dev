@@ -68,6 +68,7 @@ class Bot extends Component {
 
               <Input
                 name='message'
+                placeholder='Tapez votre texte ici'
                 id="standard-input"
                 onChange={this.handleChange}
                 value={this.state.body}
