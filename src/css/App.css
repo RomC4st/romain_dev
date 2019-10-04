@@ -67,8 +67,8 @@ height:100%!important
 }iframe {
   display:block;
   margin: 0 auto;
-  width: 304px;
 }
+
 .top-right{
   height:80vh
 }
@@ -138,8 +138,6 @@ background-color:#fff
   margin-bottom:20vh !important
  
 }
-
-
 .bot h5{
   font-size: 10px;
   position:absolute;
@@ -153,7 +151,9 @@ background-color:#fff
   color:#fff;
   padding:2vh 1px 1px 1px
 }
-
+#site_in_progess{
+  display:none
+}
 .top-right a{
  display:none
 }
@@ -165,3 +165,12 @@ background-color:#fff
     transform: rotate(360deg);
   }
 }
+
+@media (max-width: 1700px) { 
+  iframe {
+    display:none;
+  }
+  #site_in_progess{
+    display:inline
+  }
+ }

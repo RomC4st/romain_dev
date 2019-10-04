@@ -48,6 +48,7 @@ class Bot extends Component {
 
     axios.post(url, body)
       .then(res => {
+        
         const r = res.data.split('<Message>')
         const response = r[1].split('</Message>')
         this.setState({ response: response[0] })
