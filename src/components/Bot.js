@@ -68,7 +68,7 @@ class Bot extends Component {
         <div className={click === false ? classes.Hidden : classes.Visible}>
           <Grid container >
             <Grid item md={12} >
-              <p className='text'>{response}</p>
+              <p className='text'><span>{response}</span></p>
               <p className='text'><span className={req === '' ? 0 : classes.Padding}>{req}</span></p>
               <Input
                 name='message'

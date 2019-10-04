@@ -11,8 +11,7 @@ export default function HomePage() {
   return (
     <Grid container>
       <div className="Home_page">
-        
-        <div className='link'> 
+        <div className='link'>
           <Grid item md={12}>
             <div>
               <a target='_blank' rel="noopener noreferrer" href='https://github.com/RomC4st'>
@@ -21,20 +20,20 @@ export default function HomePage() {
               <a target='_blank' rel="noopener noreferrer" href='https://www.linkedin.com/in/romain-castillon/'>
                 <FontAwesomeIcon value='linkedin' icon={faLinkedin} />
               </a>
-             
             </div>
           </Grid>
-          <img id='site_in_progess' src={site_in_progress} alt='site_in_progress' />
-          <Grid item sm={12}  >
-            <iframe
-              title="JeuxPhaser"
-              width="480px"
-              height="640px"
-              src='https://starshoot.000webhostapp.com/'
-              scrolling="no"           >
-            </iframe>
-          </Grid>
-          {/*  <Grid item sm={12}  >
+        </div>
+        <img id='site_in_progess' src={site_in_progress} alt='site_in_progress' />
+        <Grid item sm={12}  >
+          <iframe
+            title="JeuxPhaser"
+            width="480px"
+            height="640px"
+            src='https://starshoot.000webhostapp.com/'
+            scrolling="no"           >
+          </iframe>
+        </Grid>
+        {/*  <Grid item sm={12}  >
             <iframe
               title="BlogPhoto"
               width="30%"
@@ -59,7 +58,6 @@ export default function HomePage() {
               src="https://libizi.fr">
             </iframe>
           </Grid> */}
-        </div>
       </div>
     </Grid>
   )
