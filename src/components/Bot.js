@@ -13,10 +13,10 @@ const styles = () => ({
     borderTopRightRadius: '50px',
     backgroundColor: 'rgba(119,136,153,0.2)',
   },
-  Padding:{
-    padding:'8px',
+  Padding: {
+    padding: '8px',
     backgroundColor: '#fff',
-    borderRadius:'20px'
+    borderRadius: '20px'
   },
   Hidden: {
     display: 'none'
@@ -35,7 +35,7 @@ const styles = () => ({
 
 class Bot extends Component {
   state = {
-    response: 'Hello',
+    response: "Je suis également disponible sur WhatsApp au: +1 415-523-8886. Il suffit de m'envoyer le code 'join shells-earlier' pour m'activer",
     click: false,
     req: '',
     body: ''
@@ -69,7 +69,7 @@ class Bot extends Component {
           <Grid container >
             <Grid item md={12} >
               <p className='text'>{response}</p>
-              <p className='text'><span className={req===''?0:classes.Padding}>{req}</span></p>
+              <p className='text'><span className={req === '' ? 0 : classes.Padding}>{req}</span></p>
               <Input
                 name='message'
                 placeholder='  Tapez votre texte ici'
