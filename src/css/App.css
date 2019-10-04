@@ -93,7 +93,7 @@ right:0;
 font-size:12px;
 width:98%;
 height:10vh;
-padding:2px
+padding:5px
 }
 .text:first-child{
   padding-top:6vh;
@@ -114,8 +114,8 @@ padding:2px
 input#standard-input{
 position:absolute;
 bottom:-32vh;
-right:-15vw;
-width:14.90vw;
+right:-17.5vw;
+width:19.95vw;
 background-color:#fff;
 border-top: 1px solid #000;
 border-bottom: 1px solid #000;
@@ -131,9 +131,11 @@ background-color:#fff
 }
 .bot{
   position:absolute;
+  overflow-x: hidden;
+  overflow-y: hidden;
   top:-40vh;
   right:1vw;
-  width:15vw;
+  width:20vw;
   height:50vh;
   margin-bottom:20vh !important
  

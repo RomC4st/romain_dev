@@ -9,8 +9,8 @@ const styles = () => ({
   Visible: {
     display: 'block',
     height: '40vh',
-    borderTopLeftRadius:'50px',
-    borderTopRightRadius:'50px',
+    borderTopLeftRadius: '50px',
+    borderTopRightRadius: '50px',
     backgroundColor: 'rgba(119,136,153,0.1)',
   },
   Hidden: {
@@ -18,13 +18,13 @@ const styles = () => ({
   },
   Bottom: {
     top: '35vh !important',
-    right:'2',
-    borderTopLeftRadius:'100px',
-    borderTopRightRadius:'100px'
+    right: '2',
+    borderTopLeftRadius: '100px',
+    borderTopRightRadius: '100px'
   },
   Top: {
-    borderTopLeftRadius:'100px',
-    borderTopRightRadius:'100px'
+    borderTopLeftRadius: '100px',
+    borderTopRightRadius: '100px'
   }
 });
 
@@ -48,9 +48,16 @@ class Bot extends Component {
 
     axios.post(url, body)
       .then(res => {
-        
-        const r = res.data.split('<Message>')
-        const response = r[1].split('</Message>')
+
+        const r = res.data.split('<Message>');
+        console.log(r);
+        const response = r[1].split('</Message>');
+        const link = ()=>{
+           if(response[0].includes('http')){
+            console.log(1);
+          }
+        }
+        link()
         this.setState({ response: response[0] })
       })
 
