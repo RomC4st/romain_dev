@@ -174,7 +174,17 @@ background-color:#fff
     transform: rotate(360deg);
   }
 }
-
+@media (max-width: 768px) { 
+.bot{
+  width:100vw;
+  right:0
+ 
+}
+input#standard-input{
+  width:100vw;
+  right:-100vw
+}
+ }
 @media (max-width: 1700px) { 
   iframe {
     display:none;
