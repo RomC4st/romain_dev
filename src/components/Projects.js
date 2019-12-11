@@ -4,7 +4,10 @@ import { Grid,  CardMedia, withStyles,  Card, CardActionArea } from "@material-u
 const styles = (theme) => ({
  
   card: {
-    padding:'16vh 10vw'
+    padding:'16vh 10vw',
+    [theme.breakpoints.down('sm')]: {
+      padding:'0'
+     },
   },
 
   paragraph: {
@@ -16,7 +19,6 @@ const styles = (theme) => ({
     width:'480px',
     [theme.breakpoints.down('sm')]: {
      transform:'scale(0.7)',
-     marginLeft:'5%'
     },
   }
 })

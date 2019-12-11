@@ -47,7 +47,11 @@ const styles = (theme) => ({
   paragraph: {
     padding: '5% 14% 4% 14%',
     fontFamily: 'Bask',
-    fontSize: '1.4rem'
+    fontSize: '1.4rem',
+    [theme.breakpoints.down(767)]: {
+      padding: '5% 8% 4% 8%',
+
+    },
   }
 });
 
