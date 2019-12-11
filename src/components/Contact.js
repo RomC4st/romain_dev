@@ -11,7 +11,7 @@ const Contact = () => {
         <Grid item sm={12} md={6} className="top-left">
           <Form />
         </Grid>
-        <Grid item sm={12} md={6} className="top-right">
+        <Grid item sm={12} md={6}  className="top-right">
           <Map />
         </Grid>
       </Grid>

@@ -1,8 +1,12 @@
+
 .App {
   text-align: center;
   font-family:  Helvetica, sans-serif
 }
-
+@font-face {
+  font-family: "Bask";
+  src: url("../font/BASKVILL.TTF");
+}
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 5vmin;
@@ -35,14 +39,7 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-nav{
-  position:fixed;
-  width:10vw;
-  font-size:0.9rem;
-  left:0;
-  height:100%;
-  max-height:80vh;
-}
+
 .App-link {
   color: #61dafb;
 }
@@ -54,37 +51,31 @@ nav{
   color:#000;
   font-size: 40px;
 }
-.mapboxgl-map{
-height:100%!important
-}
+
 .Home{
   color:#000;
   text-decoration: none;
   font-size:2rem;
 }
-.captcha{
-  display:block;
-}iframe {
+iframe {
   display:block;
   margin: 0 auto;
 }
 
 .top-right{
-  height:80vh
+  width:100%;
 }
 .top-left{
-  height:80vh
+  width:100%
 }
-.link{
 
-}
+.mapboxgl-marker{
+  cursor:pointer !important
+} 
 .Home_page{
   width:100vw;
 }
-iframe{
-   width:25.6vw; 
-  border:none
-}
+
 .text{
 margin:0;
 color:#000;
@@ -113,12 +104,7 @@ font-family:'Helvetica serif';
   padding-right:10px;
 }
 
-.Contact{
-  height:80vh;
-  width:90vw;
-  position:fixed;
-  right:0
-}
+
 
 input#standard-input{
 position:absolute;
@@ -160,9 +146,7 @@ background-color:#fff
   padding:2vh 1px 1px 1px;
   cursor:pointer
 }
-#site_in_progess{
-  display:none
-}
+
 .top-right a{
  display:none
 }
@@ -180,16 +164,13 @@ background-color:#fff
   right:0
  
 }
+
 input#standard-input{
   width:100vw;
   right:-100vw
 }
  }
 @media (max-width: 1700px) { 
-  iframe {
-    display:none;
-  }
-  #site_in_progess{
-    display:inline
-  }
+
+ 
  }

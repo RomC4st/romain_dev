@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { withStyles } from "@material-ui/core/styles";
-import { Grid, Card, CardContent, Typography } from "@material-ui/core";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Grid from "@material-ui/core/Grid";
 
 const styles = (theme) => ({
 
@@ -39,39 +41,29 @@ const styles = (theme) => ({
   },
   countDown: {
     marginRight: '6px'
-  },
-  card:{
-    width:'50vw',
-    margin:'10vh auto'
-  },
-  paragraph: {
-    padding: '5% 14% 4% 14%',
-    fontFamily: 'Bask',
-    fontSize: '1.4rem'
   }
 });
 
-class HomePage extends Component {
+class Curriculum extends Component {
   render() {
     const { classes } = this.props;
     return (
-      <Grid container>
-        <div className="Home_page">
+      <Grid container
+        spacing={0}
+        direction="column"
+        alignItems="center"
+        justify="center"
+      >
+        <div className="Curriculum">
           <Grid item md={12} className={classes.marginBottom}>
-            <Card className={classes.card} align='center'>
-
-              <CardContent align='center'>
-                <Typography gutterBottom className={classes.pos} color="textSecondary">
-                  {/* adjective */}
-                </Typography>
-                <Typography gutterBottom className={classes.paragraph} variant="body1" component="p">
-                  Bienvenue sur le site (en construction) de Romain Castillon - Développeur Web
-                </Typography>
-              </CardContent>
-            </Card>
 
 
-
+            <a target='_blank' rel="noopener noreferrer" href='https://github.com/RomC4st'>
+              <FontAwesomeIcon value='github' icon={faGithub} />
+            </a>
+            <a target='_blank' rel="noopener noreferrer" href='https://www.linkedin.com/in/romain-castillon/'>
+              <FontAwesomeIcon value='linkedin' icon={faLinkedin} />
+            </a>
 
           </Grid>
 
@@ -84,4 +76,4 @@ class HomePage extends Component {
 
 }
 
-export default withStyles(styles)(HomePage)
+export default withStyles(styles)(Curriculum)

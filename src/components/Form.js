@@ -1,21 +1,81 @@
 import React, { Component } from 'react';
-import TextField from '@material-ui/core/TextField';
 import Grid from "@material-ui/core/Grid";
 import Button from '@material-ui/core/Button';
 import axios from 'axios';
-import { withStyles } from "@material-ui/core/styles";
+import { withStyles,Card,CardContent } from "@material-ui/core";
 import ReCAPTCHA from "react-google-recaptcha";
 import { RECAPTCHA_SITE_KEY, SERVER_URL } from '../config/config'
+import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
 
-const styles = () => ({
+let recaptchaInstance;
+
+const styles = (theme) => ({
   TextField: {
-    margin: '3vh',
-    width: '80%'
+    margin: '3%',
+    width: '80%',
+    [theme.breakpoints.down(767)]: {
+      width: '100%',
+      margin: '0'
+    },
   },
-  Button: {
-    marginTop: '3vh'
+  card: {
+    marginTop: '11vh',
+    paddingBottom: '4%'
+  },
+  MarginTop: {
+    paddingTop: '100px',
+  },
+  marginTopLight: {
+    marginTop: '50px'
+  },
+  Form: {
+    maxWidth: '1000px',
+    margin: 'auto',
+    paddingBottom: '10%',
+    borderRadius: '30px',
+    // boxShadow:'5px 3px 5px #9E9E9E',
+    // backgroundColor:'rgba(32, 174, 175,0.2)',
+    [theme.breakpoints.down('sm')]: {
+      padding: '10%',
+    },
+  },
+  marginLeft: {
+    marginLeft: '10%'
+  },
+  checkbox: {
+    float: 'left',
+    paddingLeft: '10%',
+    [theme.breakpoints.down(767)]: {
+      paddingLeft: '0',
+      margin: '5% 0% 0% 0%',
+    },
+  }, checkbox2: {
+    float: 'left',
+    paddingLeft: '10%',
+    [theme.breakpoints.down(767)]: {
+      paddingLeft: '0',
+      margin: '5% 0% 8% 0%',
+    },
+  },
+  marginRight: {
+    marginRight: '20px'
+  },
+  Notselected: {
+    display: 'none'
+  },
+  Captcha: {
+    padding: '0 35%',
+    marginTop: '100px',
+    [theme.breakpoints.down(769)]: {
+      padding: '0 25%',
+    },
+    [theme.breakpoints.down(767)]: {
+      padding: '2% 0',
+      transform: 'scale(0.8) translateX(-12%)',
+    },
   }
 });
+
 
 
 class Form extends Component {
@@ -37,6 +97,10 @@ class Form extends Component {
       value_captcha: value
     })
   }
+  resetRecaptcha = () => {
+    recaptchaInstance.reset();
+  };
+
   handleSubmit = (e) => {
 
     const { name, message, email, value_captcha } = this.state
@@ -60,7 +124,9 @@ class Form extends Component {
           name: '',
           message: '',
           email: ''
-        }))
+        })).then(() => {
+          this.resetRecaptcha()
+        })
         .catch(err => {
           return alert(err);
         });
@@ -74,25 +140,28 @@ class Form extends Component {
     const { classes } = this.props;
     return (
 
-      < div className='form' >
-        <h1>Formulaire de contact</h1>
-
-        <form onSubmit={this.handleSubmit}>
-          <Grid container>
-            <Grid item sm={12} className="form_name">
-              <TextField
+      <ValidatorForm
+        ref="form"
+        onSubmit={this.handleSubmit}
+        className={classes.Form}
+      >
+        <Card className={classes.card}>
+          <CardContent >
+            <Grid item sm={12} className={classes.MarginTop}>
+              <TextValidator
                 className={classes.TextField}
                 required
                 name='name'
                 id="standard-name"
+                validators={[`matchRegexp:^(?![ .]+$)[a-zA-Z çÇéèàêùÙÉÈÀ&.'-]*$`]}
                 onChange={this.handleChange}
                 label="Nom"
                 margin="normal"
                 value={this.state.name}
               />
             </Grid >
-            <Grid item md={12} className="form_email">
-              <TextField
+            <Grid item md={12}>
+              <TextValidator
                 className={classes.TextField}
                 required
                 name='email'
@@ -103,8 +172,8 @@ class Form extends Component {
                 value={this.state.email}
               />
             </Grid>
-            <Grid item md={12} className="form_message">
-              <TextField
+            <Grid item md={12} >
+              <TextValidator
                 className={classes.TextField}
                 required
                 name='message'
@@ -115,20 +184,27 @@ class Form extends Component {
                 value={this.state.message}
               />
             </Grid>
-            <Grid item md={12} className='captcha' style={{ paddingLeft: '30%' }}>
+            <Grid item md={6} className={classes.Captcha}>
               <ReCAPTCHA
-                ref={this.recaptchaRef}
+                ref={e => recaptchaInstance = e}
                 sitekey={RECAPTCHA_SITE_KEY}
                 onChange={this.onChange}
               />
             </Grid>
-            <Grid item md={12} className="form_button">
-              <Button className={classes.Button} type="submit">Envoyer</Button>
+            <Grid item sm={12} className="form_button">
+              <Button
+                className={classes.marginTopLight}
+                color="primary"
+                type="submit"
+                theme={this.createMuiTheme}
+                variant="contained"
+              >
+                Envoyer
+                </Button>
             </Grid>
-          </Grid>
-
-        </form>
-      </div >
+          </CardContent>
+        </Card>
+      </ValidatorForm>
 
     )
   }
