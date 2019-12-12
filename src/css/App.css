@@ -147,7 +147,7 @@ background-color:#fff
     transform: rotate(360deg);
   }
 }
-@media (max-width: 768px) { 
+@media (max-width: 1028px) { 
   .Projects{
     padding-top:0
   }
@@ -162,7 +162,7 @@ input#standard-input{
   right:-100vw
 }
  }
-@media (max-width: 767px) { 
+@media (max-width: 769px) { 
   input#standard-input{
     width:95vw;
     left:2px

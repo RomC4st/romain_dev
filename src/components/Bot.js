@@ -20,9 +20,9 @@ const styles = (theme) => ({
     borderLeft: '1px solid black',
     borderRight: '1px solid black',
     borderBottom: '1px solid black',
-    [theme.breakpoints.down(767)]: {
-transform:'translateY(-20%)'   
- },
+    [theme.breakpoints.down(769)]: {
+      transform: 'translateY(-20%)'
+    },
 
   },
   Padding: {
@@ -46,10 +46,10 @@ transform:'translateY(-20%)'
     right: '2vw',
     bottom: '6vh',
     cursor: 'pointer',
-    [theme.breakpoints.down(767)]: {
+    [theme.breakpoints.down(769)]: {
       bottom: '10vh'
     },
-  
+
   },
   Title: {
     padding: '3% 0',
