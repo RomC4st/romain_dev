@@ -1,17 +1,30 @@
 import React, { Component } from 'react';
 import Grid from "@material-ui/core/Grid";
 import axios from 'axios';
+import { faReact } from '@fortawesome/free-brands-svg-icons';
 import { withStyles } from "@material-ui/core/styles";
-import { Input, Button } from '@material-ui/core';
+import { Input, Button, Typography } from '@material-ui/core';
 import { SERVER_BOT } from '../config/config'
+import paperPlane from '../images/paperplane.png';
+import robot from '../images/robot.png';
+import OutsideClickHandler from 'react-outside-click-handler';
 
-const styles = () => ({
+
+
+const styles = (theme) => ({
   Visible: {
     display: 'block',
-    height: '40vh',
-    borderTopLeftRadius: '50px',
-    borderTopRightRadius: '50px',
-    backgroundColor: 'rgba(119,136,153,0.2)',
+    height: '50vh',
+    borderRadius: '15px',
+    backgroundColor: '#fff',
+    borderLeft: '1px solid black',
+    borderRight: '1px solid black',
+    borderBottom: '1px solid black',
+    [theme.breakpoints.down(767)]: {
+transform:'translateY(-15%)'   
+ },
+ [theme.breakpoints.down(321)]: {
+  transform:'translateY(-18%)'    },
   },
   Padding: {
     padding: '8px',
@@ -21,15 +34,32 @@ const styles = () => ({
   Hidden: {
     display: 'none'
   },
-  Bottom: {
-    top: '35vh !important',
-    right: '2',
-    borderTopLeftRadius: '100px',
-    borderTopRightRadius: '100px'
-  },
   Top: {
-    borderTopLeftRadius: '100px',
-    borderTopRightRadius: '100px'
+    position: 'absolute',
+    fontSize: '40px',
+    right: '2vw',
+    bottom: '60vh',
+    cursor: 'pointer'
+  },
+  Bottom: {
+    position: 'absolute',
+    fontSize: '40px',
+    right: '2vw',
+    bottom: '6vh',
+    cursor: 'pointer',
+    [theme.breakpoints.down(767)]: {
+      bottom: '8vh'
+    },
+    [theme.breakpoints.down(321)]: {
+      bottom: '10vh'
+    },
+  },
+  Title: {
+    padding: '3% 0',
+    borderTopLeftRadius: '15px',
+    borderTopRightRadius: '15px',
+    color: '#fff',
+    backgroundColor: '#254280'
   }
 });
 
@@ -63,25 +93,38 @@ class Bot extends Component {
     const { classes } = this.props;
     const { click, response, req } = this.state
     return (
-      <div className='bot'>
-        <h5 onClick={this.handleClick} className={click === false ? classes.Bottom : classes.Top}>GoogleBot</h5>
-        <div className={click === false ? classes.Hidden : classes.Visible}>
-          <Grid container >
-            <Grid item md={12} >
-              <p className='text'><span>{response}</span></p>
-              <p className='text'><span className={req === '' ? 0 : classes.Padding}>{req}</span></p>
-              <Input
-                name='message'
-                placeholder='  Tapez votre texte ici'
-                id="standard-input"
-                onChange={this.handleChange}
-                value={this.state.body}
-              />
-              <Button className='button_chatBot' onClick={this.handleSubmit}>Send</Button>
+      <OutsideClickHandler
+        onOutsideClick={() => {
+          this.setState({
+            click: false
+          });
+        }}
+      >
+        <div className='bot'>
+          <img src={robot} alt='robot' className={click === false ? classes.Bottom : classes.Hidden} onClick={this.handleClick} value='robot' icon={faReact} />
+
+          <div className={click === false ? classes.Hidden : classes.Visible}>
+
+            <Typography onClick={this.handleClick} className={classes.Title} color="textSecondary" gutterBottom>
+              GoogleBot
+                </Typography>
+            <Grid container >
+              <Grid item md={12} >
+                <p className='text'><span>{response}</span></p>
+                <p className='text'><span className={req === '' ? 0 : classes.Padding}>{req}</span></p>
+                <Input
+                  name='message'
+                  placeholder='  Tapez votre texte ici'
+                  id="standard-input"
+                  onChange={this.handleChange}
+                  value={this.state.body}
+                />
+                <Button className='button_chatBot' onClick={this.handleSubmit}><img alt='send' src={paperPlane}></img></Button>
+              </Grid>
             </Grid>
-          </Grid>
+          </div>
         </div>
-      </div>
+      </OutsideClickHandler>
     );
   }
 }

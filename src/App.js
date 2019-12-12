@@ -6,6 +6,7 @@ import Contact from './components/Contact';
 import Projects from './components/Projects';
 import Curriculum from './components/Curriculum';
 import { AppBar, Tabs, Tab, withStyles } from '@material-ui/core'
+import Bot from './components/Bot';
 
 import './css/App.css';
 
@@ -77,7 +78,7 @@ class App extends Component {
            <Route path="/projets" component={Projects} /> 
 
         </Switch>
-
+        <Bot />
         <Footer />
       </div>
 

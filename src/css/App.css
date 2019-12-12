@@ -68,6 +68,9 @@ iframe {
 .top-left{
   width:100%
 }
+.Projects{
+  padding-top:10vh
+}
 
 .mapboxgl-marker{
   cursor:pointer !important
@@ -95,8 +98,6 @@ font-family:'Helvetica serif';
   text-align:center;
   background-color: #fff;
   border-radius:20px;
-  
-
 }
 .text:nth-child(2){
   padding-top:28vh;
@@ -114,36 +115,24 @@ width:20.95vw;
 background-color:#fff;
 border-radius:100px
 }
+
 .button_chatBot{
-  position:absolute;
+position:absolute;
 bottom:-35.5vh;
 right:0vw;
 width:15vw;
 background-color:#fff
 }
 .bot{
-  position:absolute;
-  overflow-x: hidden;
-  overflow-y: hidden;
-  top:-40vh;
+  position:fixed;
+  bottom:0;
   right:1vw;
   width:22vw;
   height:50vh;
-  margin-bottom:20vh !important;
   cursor: text 
 }
 .bot h5{
-  font-size: 10px;
-  position:absolute;
-  right:0;
-  width:100%;
-  height:3vh;
-  color:#000;
-  margin:0;
-  z-index:1;
-  background-color: #282c34;
-  color:#fff;
-  padding:2vh 1px 1px 1px;
+
   cursor:pointer
 }
 
@@ -159,6 +148,9 @@ background-color:#fff
   }
 }
 @media (max-width: 768px) { 
+  .Projects{
+    padding-top:0
+  }
 .bot{
   width:100vw;
   right:0
@@ -170,7 +162,17 @@ input#standard-input{
   right:-100vw
 }
  }
-@media (max-width: 1700px) { 
+@media (max-width: 767px) { 
+  input#standard-input{
+    width:95vw;
+    left:2px
 
+ }
+ 
+ }
+ @media (max-width: 321px) { 
+.text:first-child{
+  margin-top:10vh
+}
  
  }

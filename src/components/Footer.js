@@ -1,11 +1,11 @@
 // import React from 'react';
-// import Bot from './Bot'
+// 
 // import '../css/App.css';
 
 // const Footer = () => {
 //   return (
 //     <footer className="App-footer">
-//       <Bot />
+//       
 //     </footer>
 //   )
 // }
@@ -19,7 +19,6 @@ import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
-
 
 
 
@@ -60,6 +59,7 @@ class Footer extends React.Component {
             </Toolbar>
           </AppBar>
         </Grid>
+       
       </Paper>
     );
   }

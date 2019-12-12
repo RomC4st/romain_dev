@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Grid,  CardMedia, withStyles,  Card, CardActionArea } from "@material-ui/core/";
+import { Grid, withStyles} from "@material-ui/core/";
 
 const styles = (theme) => ({
  
@@ -24,17 +24,7 @@ const styles = (theme) => ({
 })
 
 class Projects extends Component {
-  state = {
-    
-  }
-  handleClick = () => {
-    this.setState({
-      copy: true
-    })
-  }
-  componentDidMount = () => {
-   console.log(window.innerWidth)
-  }
+
 
   render() {
     const { classes } = this.props;
@@ -45,12 +35,6 @@ class Projects extends Component {
           alignItems="center"
           justify="center">
           <Grid item sm={12} className="top">
-            <Card className={classes.card} align='center'>
-              <CardActionArea>
-                <CardMedia
-                  className={classes.media}
-                  title='Cagnotte leetchi'
-                >
                   <iframe
                     title="JeuxPhaser"
                     className={classes.game}                    
@@ -58,12 +42,6 @@ class Projects extends Component {
                     src='https://starshoot.000webhostapp.com/'
                     scrolling="no"           >
                   </iframe>
-                </CardMedia>
-              
-              </CardActionArea>
-
-            </Card>
-
           </Grid>
         </Grid>
       </div>
