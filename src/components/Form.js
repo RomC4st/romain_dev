@@ -165,6 +165,7 @@ class Form extends Component {
                 className={classes.TextField}
                 required
                 name='email'
+                validators={["matchRegexp:^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"]}
                 id="standard-email"
                 onChange={this.handleChange}
                 label="Email"
