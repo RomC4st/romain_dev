@@ -170,9 +170,9 @@ input#standard-input{
  }
  
  }
- @media (max-width: 767px) { 
+ @media (max-width: 1028px) { 
 .text:first-child{
-  margin-top:10vh
+  margin-top:11vh
 }
  
  }

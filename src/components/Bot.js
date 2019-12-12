@@ -20,9 +20,8 @@ const styles = (theme) => ({
     borderLeft: '1px solid black',
     borderRight: '1px solid black',
     borderBottom: '1px solid black',
-    [theme.breakpoints.down(769)]: {
+    marginBottom:'8vh',
       transform: 'translateY(-20%)'
-    },
 
   },
   Padding: {
