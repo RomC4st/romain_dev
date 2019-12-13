@@ -20,8 +20,8 @@ const styles = (theme) => ({
     borderLeft: '1px solid black',
     borderRight: '1px solid black',
     borderBottom: '1px solid black',
-    marginBottom:'8vh',
-      transform: 'translateY(-20%)'
+    marginBottom: '8vh',
+    transform: 'translateY(-20%)'
 
   },
   Padding: {
@@ -72,7 +72,9 @@ class Bot extends Component {
   handleChange = (e) => {
     this.setState({ body: e.target.value })
   }
-  handleSubmit = () => {
+  handleSubmit = (e) => {
+    e.preventDefault();
+
     this.setState({ req: this.state.body, body: '' })
     const url = SERVER_BOT
     const body = { Body: this.state.body }
@@ -108,14 +110,16 @@ class Bot extends Component {
               <Grid item md={12} >
                 <p className='text'><span>{response}</span></p>
                 <p className='text'><span className={req === '' ? 0 : classes.Padding}>{req}</span></p>
-                <Input
-                  name='message'
-                  placeholder='  Tapez votre texte ici'
-                  id="standard-input"
-                  onChange={this.handleChange}
-                  value={this.state.body}
-                />
-                <Button className='button_chatBot' onClick={this.handleSubmit}><img alt='send' src={paperPlane}></img></Button>
+                <form onSubmit={this.handleSubmit}>
+                  <Input
+                    name='message'
+                    placeholder='  Tapez votre texte ici'
+                    id="standard-input"
+                    onChange={this.handleChange}
+                    value={this.state.body}
+                  />
+                  <Button className='button_chatBot' type='submit'><img alt='send' src={paperPlane}></img></Button>
+                </form>
               </Grid>
             </Grid>
           </div>
