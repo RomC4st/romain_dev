@@ -176,10 +176,28 @@ input#standard-input{
 }
  
  }
- @media (max-height: 620px) { 
+ @media (max-height: 680px) { 
   .text:first-child{
-    margin-top:20vh
+    margin-top:12vh
   }
    
    }
+ @media (max-height: 620px) { 
+  .text:first-child{
+    margin-top:15vh
+  }
+   
+   }
+   @media (max-height: 570px) { 
+    .text:first-child{
+      margin-top:15vh
+    }
+     
+     }
+     @media (max-height: 520px) { 
+      .text:first-child{
+        margin-top:17vh
+      }
+       
+       }
   
