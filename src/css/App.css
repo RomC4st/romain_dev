@@ -176,3 +176,10 @@ input#standard-input{
 }
  
  }
+ @media (max-height: 620px) { 
+  .text:first-child{
+    margin-top:20vh
+  }
+   
+   }
+  
