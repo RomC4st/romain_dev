@@ -174,19 +174,24 @@ input#standard-input{
 .text:first-child{
   margin-top:11vh
 }
+
  
  }
  @media (max-height: 680px) { 
   .text:first-child{
     margin-top:12vh
   }
-   
+  .text:nth-child(2){
+    transform:translatey(10%)
+  }
    }
  @media (max-height: 620px) { 
   .text:first-child{
     margin-top:15vh
   }
-   
+  .text:nth-child(2){
+    transform:translateY(20%)
+  }
    }
    @media (max-height: 570px) { 
     .text:first-child{
